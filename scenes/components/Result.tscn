@@ -1,4 +1,44 @@
-[gd_scene format=3 uid="uid://b06qfvbxkqa0u"]
+[gd_scene load_steps=10 format=3 uid="uid://b06qfvbxkqa0u"]
+
+[ext_resource type="LabelSettings" uid="uid://bsx7ofsbo701t" path="res://scenes/components/HomeLabel.tres" id="1_b7s2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q87am"]
+bg_color = Color(0.0117647, 0.0901961, 0.298039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jchm2"]
+bg_color = Color(0.298039, 0.32549, 0.705882, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epqes"]
+bg_color = Color(0.298039, 0.32549, 0.705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qick"]
+bg_color = Color(0.298039, 0.32549, 0.705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_un2f7"]
+bg_color = Color(0.298039, 0.32549, 0.705882, 1)
+
+[sub_resource type="Theme" id="Theme_y4v52"]
+TextEdit/styles/focus = SubResource("StyleBoxFlat_epqes")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_3qick")
+TextEdit/styles/read_only = SubResource("StyleBoxFlat_un2f7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jcyqp"]
+font_size = 60
+font_color = Color(0.964706, 0.945098, 0.984314, 1)
+outline_size = 3
+outline_color = Color(0.964706, 0.945098, 0.984314, 1)
+shadow_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tabg6"]
+bg_color = Color(0.556863, 0.592157, 0.992157, 1)
+corner_radius_top_left = 81
+corner_radius_top_right = 81
+corner_radius_bottom_right = 81
+corner_radius_bottom_left = 81
 
 [node name="Result" type="Control"]
 layout_mode = 3
@@ -7,3 +47,84 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_vertical_guides_ = [1038.0, 48.0]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q87am")
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -492.0
+offset_top = -1654.0
+offset_right = 493.0
+offset_bottom = -440.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jchm2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="Panel/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Panel/PanelContainer/MarginContainer/VBoxContainer5"]
+layout_mode = 2
+text = "Hasil Perhitungan"
+label_settings = ExtResource("1_b7s2s")
+
+[node name="TextEdit" type="TextEdit" parent="Panel/PanelContainer/MarginContainer/VBoxContainer5"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y4v52")
+text = "Hi halo tes 123
+Ini Kosong"
+editable = false
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -375.0
+offset_top = 77.0
+offset_right = 375.0
+offset_bottom = 292.0
+grow_horizontal = 2
+text = "Result"
+label_settings = SubResource("LabelSettings_jcyqp")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -492.5
+offset_top = -383.0
+offset_right = 492.5
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/icon_normal_color = Color(0.964706, 0.945098, 0.984314, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_tabg6")
+text = "Back"
