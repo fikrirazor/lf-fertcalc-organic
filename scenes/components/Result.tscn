@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b06qfvbxkqa0u"]
+[gd_scene load_steps=11 format=3 uid="uid://b06qfvbxkqa0u"]
 
 [ext_resource type="LabelSettings" uid="uid://bsx7ofsbo701t" path="res://scenes/components/HomeLabel.tres" id="1_b7s2s"]
+[ext_resource type="Script" uid="uid://dn6dx3g2wssh8" path="res://scripts/result.gd" id="1_q87am"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q87am"]
 bg_color = Color(0.0117647, 0.0901961, 0.298039, 1)
@@ -47,6 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_q87am")
 metadata/_edit_vertical_guides_ = [1038.0, 48.0]
 
 [node name="Panel" type="Panel" parent="."]
